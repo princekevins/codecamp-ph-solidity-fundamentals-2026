@@ -14,7 +14,7 @@ State variables are declared inside a contract but outside any function, allowin
 ### Syntax
 
 ```solidity
-<visibility> <type> <variableName>;
+<type> <visibility> <variableName>;
 ```
 
 ### Example
