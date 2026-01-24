@@ -63,6 +63,79 @@ contract Child is Parent {
 }
 ```
 
+## Project Structure
+
+This repo is organized by topic folders:
+
+- `1-Intro`
+- `2-State Variables`
+- `3-Local Variables`
+- `4-Function`
+- `5-Constructor`
+- `6-Data Types`
+- `7-Array`
+- `8-Loops`
+- `9-Conditionals`
+- `10-Struct`
+- `11-Mapping`
+- `12-Storage Locations`
+- `13-Global Variables`
+- `14- Contract Balance`
+- `15-Visibility`
+- `16-Exercises`
+
+## Learning Path
+
+Follow folders in order from `1-Intro` to `16-Exercises`. Each folder contains simple examples for the topic, with `16-Exercises` providing TODO-based practice.
+
+## How to Run Each Folder (1-16)
+
+There is no single "run" command for the entire repo. Each `.sol` file is a separate contract that you compile and deploy.
+
+### Using Remix (Recommended)
+
+1. Open Remix: https://remix.ethereum.org
+2. Create a workspace and import the folder you want (e.g., `7-Array`).
+3. Open a `.sol` file in that folder.
+4. Set the compiler version to match the file `pragma`.
+5. Compile and deploy.
+6. Interact with the contract functions in the Remix UI.
+
+Repeat the same steps for each folder and file you want to try.
+
+### Using Hardhat (Local)
+
+1. Copy one folder at a time into `contracts/` (for example `7-Array/`).
+2. Compile with `npx hardhat compile`.
+3. Create a script to deploy and interact with a specific contract.
+
+Example script outline:
+
+```javascript
+// scripts/run.js
+const { ethers } = require("hardhat");
+
+async function main() {
+  const Contract = await ethers.getContractFactory("ContractNameHere");
+  const contract = await Contract.deploy();
+  await contract.waitForDeployment();
+  console.log("Deployed:", await contract.getAddress());
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+```
+
+Run it with:
+
+```bash
+npx hardhat run scripts/run.js
+```
+
+Repeat by swapping the folder and contract name you want to test.
+
 ## Setup and Run in Remix
 
 Remix is a browser-based IDE, so there is nothing to install to compile or run these contracts.
@@ -129,5 +202,21 @@ Create a script in `scripts/` and run:
 ```bash
 npx hardhat run scripts/yourScript.js
 ```
+
+## Exercises
+
+The `16-Exercises` folder contains TODO-based practice files. Start with `01_AddressBook.sol` and work in order.
+
+## Testing
+
+No automated tests are included. Use Remix or Hardhat to manually deploy and interact.
+
+## Contributing
+
+Contributions are welcome for typos, clarity improvements, or new examples. Keep changes small and focused.
+
+## License
+
+Add a license file if you plan to distribute or reuse this material.
 
 
