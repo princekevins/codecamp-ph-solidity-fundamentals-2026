@@ -1,0 +1,153 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "child_var",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "child_var2",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "child_var4",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "f1",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "f4",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Shows how different visibility types behave in inheritance",
+			"kind": "dev",
+			"methods": {
+				"f1()": {
+					"details": "Public function visible both internally and externally",
+					"returns": {
+						"_0": "Always returns 1"
+					}
+				},
+				"f4()": {
+					"details": "External function visible only outside the contract",
+					"returns": {
+						"_0": "Always returns 4"
+					}
+				}
+			},
+			"stateVariables": {
+				"child_var": {
+					"details": "Calls internal function from parent contract"
+				},
+				"child_var2": {
+					"details": "Attempts to call external function from parentCurrent solution: Changed to use this.f4() to demonstrate external call"
+				},
+				"child_var4": {
+					"details": "Calls public function from parent contract"
+				}
+			},
+			"title": "Child Contract Demonstrating Inheritance",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"child_var()": {
+					"notice": "Works because internal functions are accessible in child contracts"
+				},
+				"child_var2()": {
+					"notice": "This would fail because external functions can't be called directly internallyFixed by either: 1. Changing f4() to public in parent contract (recommended) 2. Using this.f4() to force external call"
+				},
+				"child_var4()": {
+					"notice": "Works because public functions are fully accessible"
+				},
+				"f1()": {
+					"notice": "Can be called: - From within this contract - From child contracts - From other contracts - From transactions"
+				},
+				"f4()": {
+					"notice": "Can be called: - From other contracts (via this.f4()) - From transactions - NOT from within this contract (without using this.f4()) - NOT from child contracts (without using this.f4())"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"14-Visibility/code.sol": "ChildDemo"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"14-Visibility/code.sol": {
+			"keccak256": "0x5a72c3116228de3358f3909500e99ab7a43a16c2aacca368e78a0f87e6ecaf55",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://62e302ac05c421893cb9447e35b69d7ee48aa82977e381b2c980bb1ba8aa625d",
+				"dweb:/ipfs/Qmat7q5NBCH9qu8YwVuXb6HbQbM2V3f1rPP5M3PuWh7zmU"
+			]
+		}
+	},
+	"version": 1
+}

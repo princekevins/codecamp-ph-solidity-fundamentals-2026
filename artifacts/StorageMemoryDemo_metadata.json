@@ -1,0 +1,181 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "demonstrateGasCosts",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "demonstrateMemoryBehavior",
+				"outputs": [],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "demonstrateStorageBehavior",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "demonstrateStructBehavior",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getStudentArray",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "person",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "age",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "resetStudentArray",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "student",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Shows the difference between storage and memory data locations in Solidity",
+			"kind": "dev",
+			"methods": {
+				"demonstrateGasCosts()": {
+					"details": "Demonstrates gas costs of memory vs storage operationsState Mutability: view (only reads from storage)Gas Analysis: - Memory copy: ~2100 gas for 3-element array - Storage read operations: ~200 gas total for length and element access",
+					"returns": {
+						"_0": "memLength Length of the memory array (copied from storage)",
+						"_1": "firstElement First element of the storage array"
+					}
+				},
+				"demonstrateMemoryBehavior()": {
+					"details": "Demonstrates memory data location behaviorData Location: memory - Creates an independent copy of the array (gas cost: ~2100 gas for 3 elements) - Changes to the copy don't affect original storage - Memory arrays are temporary and exist only during executionState Mutability: view (only reads from storage, doesn't modify it)Use Case: When you need to work with array data without modifying storage"
+				},
+				"demonstrateStorageBehavior()": {
+					"details": "Demonstrates storage data location behaviorData Location: storage - Creates a reference to the existing storage array (gas cost: ~40 gas) - Changes through the reference modify the original storage - Storage modifications are expensive (~20,000 gas per write)State Mutability: (default) - modifies storageUse Case: When you need to modify the original storage arrayWARNING: Directly modifies contract state"
+				},
+				"demonstrateStructBehavior()": {
+					"details": "Demonstrates memory vs storage with structsState Mutability: (default) - modifies storage for the age fieldGas Implications: - Struct copy to memory: ~700 gas - Storage modification: ~20,000 gas for the age field"
+				},
+				"getStudentArray()": {
+					"details": "Returns the current state of the student arrayState Mutability: view (only reads from storage)Gas Cost: ~700 gas for copying the array to memory",
+					"returns": {
+						"_0": "The current student array from storage"
+					}
+				},
+				"resetStudentArray()": {
+					"details": "Resets the student array to its initial stateState Mutability: (default) - modifies storageGas Cost: ~40,000 gas (20k for each of 3 writes)"
+				}
+			},
+			"title": "Storage vs Memory Demonstration",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"demonstrateMemoryBehavior()": {
+					"notice": "Creates a copy of the storage array in memoryModifications to the memory copy don't affect storage"
+				},
+				"demonstrateStorageBehavior()": {
+					"notice": "Creates a reference to the storage arrayModifications affect the original storage array"
+				},
+				"demonstrateStructBehavior()": {
+					"notice": "Shows how complex types behave with different data locations"
+				}
+			},
+			"notice": "Demonstrates how assignments behave differently based on data location",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"11-Storage Locations/Storage_Memory.sol": "StorageMemoryDemo"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"11-Storage Locations/Storage_Memory.sol": {
+			"keccak256": "0x2a1c32730808dedb58894c2f1dd4fa6f17d5fb54424b2a53592a56f7e20bdb9d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e2a1d8621e6e83cb51974dd24d14129ca499db78593cdab84748517baf937592",
+				"dweb:/ipfs/QmcEexurjrHx9MmBLSRVCLuMBXoaAk2s4fMrmitf33TgcZ"
+			]
+		}
+	},
+	"version": 1
+}

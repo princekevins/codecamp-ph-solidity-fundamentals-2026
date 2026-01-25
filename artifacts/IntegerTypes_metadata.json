@@ -1,0 +1,412 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "firstValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "secondValue",
+						"type": "uint256"
+					}
+				],
+				"name": "add",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "count",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "count2",
+				"outputs": [
+					{
+						"internalType": "int16",
+						"name": "",
+						"type": "int16"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "count3",
+				"outputs": [
+					{
+						"internalType": "int32",
+						"name": "",
+						"type": "int32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "demonstrateTypeConversions",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "firstValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "secondValue",
+						"type": "uint256"
+					}
+				],
+				"name": "explicitSafeAdd",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "firstValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "secondValue",
+						"type": "uint256"
+					}
+				],
+				"name": "isGreater",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "num",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "num2",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "num3",
+				"outputs": [
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "largeNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "safeConvertToUint8",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stateValueA",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stateValueB",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newValue",
+						"type": "uint256"
+					}
+				],
+				"name": "updateStateValueA",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "int256",
+						"name": "newValue",
+						"type": "int256"
+					}
+				],
+				"name": "updateStateValueB",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Your Name",
+			"details": "Demonstrates the use of integer types in Solidity with best practices",
+			"kind": "dev",
+			"methods": {
+				"add(uint256,uint256)": {
+					"details": "Adds two unsigned integers",
+					"params": {
+						"firstValue": "First operand (renamed from 'x' for clarity)",
+						"secondValue": "Second operand (renamed from 'y' for clarity)"
+					},
+					"returns": {
+						"_0": "Sum of firstValue and secondValue"
+					}
+				},
+				"demonstrateTypeConversions()": {
+					"details": "Demonstrates safe type conversions between different integer sizes",
+					"returns": {
+						"_0": "Tuple of converted values (uint8, uint16, uint32)"
+					}
+				},
+				"explicitSafeAdd(uint256,uint256)": {
+					"details": "Adds two numbers with explicit overflow check",
+					"params": {
+						"firstValue": "First value",
+						"secondValue": "Second value"
+					},
+					"returns": {
+						"_0": "Sum of firstValue and secondValue"
+					}
+				},
+				"isGreater(uint256,uint256)": {
+					"details": "Compares two unsigned integers",
+					"params": {
+						"firstValue": "First value to compare (renamed from 'a' to avoid shadowing)",
+						"secondValue": "Second value to compare (renamed from 'b' for consistency)"
+					},
+					"returns": {
+						"_0": "true if firstValue > secondValue, false otherwise"
+					}
+				},
+				"safeConvertToUint8(uint256)": {
+					"details": "Safely converts a uint256 to uint8 with overflow protection",
+					"params": {
+						"largeNumber": "Value to convert"
+					},
+					"returns": {
+						"_0": "Converted value"
+					}
+				},
+				"updateStateValueA(uint256)": {
+					"details": "Updates the stateValueA variable",
+					"params": {
+						"newValue": "New value to set"
+					}
+				},
+				"updateStateValueB(int256)": {
+					"details": "Updates the stateValueB variable",
+					"params": {
+						"newValue": "New value to set"
+					}
+				}
+			},
+			"stateVariables": {
+				"count": {
+					"details": "Signed 256-bit integer initialized to 127"
+				},
+				"count2": {
+					"details": "Signed 16-bit integer initialized to -1233"
+				},
+				"count3": {
+					"details": "Signed 32-bit integer initialized to -123456"
+				},
+				"num": {
+					"details": "Unsigned 256-bit integer initialized to 23"
+				},
+				"num2": {
+					"details": "Unsigned 8-bit integer initialized to maximum value (255)"
+				},
+				"num3": {
+					"details": "Unsigned 16-bit integer initialized to 26456"
+				},
+				"stateValueA": {
+					"details": "Default unsigned 256-bit integer (state variable)"
+				},
+				"stateValueB": {
+					"details": "Default signed 256-bit integer (state variable)"
+				}
+			},
+			"title": "Integer Types Demo",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"add(uint256,uint256)": {
+					"notice": "Uses Solidity 0.8.0+ built-in overflow protection"
+				},
+				"count2()": {
+					"notice": "Range: -32,768 to 32,767"
+				},
+				"count3()": {
+					"notice": "Range: -2,147,483,648 to 2,147,483,647"
+				},
+				"demonstrateTypeConversions()": {
+					"notice": "Shows how to safely convert between integer types"
+				},
+				"explicitSafeAdd(uint256,uint256)": {
+					"notice": "Demonstrates manual overflow check (redundant in 0.8.0+ but educational)"
+				},
+				"num2()": {
+					"notice": "Range: 0 to 255"
+				},
+				"num3()": {
+					"notice": "Range: 0 to 65,535"
+				},
+				"safeConvertToUint8(uint256)": {
+					"notice": "Reverts if input exceeds uint8 range (255)"
+				},
+				"stateValueA()": {
+					"notice": "Range: 0 to 2^256-1 (~1.15e77)uint256 is the default when using just 'uint'"
+				},
+				"stateValueB()": {
+					"notice": "Range: -2^255 to 2^255-1 (~±5.79e76)"
+				},
+				"updateStateValueA(uint256)": {
+					"notice": "Demonstrates state variable modification"
+				}
+			},
+			"notice": "Shows different integer sizes, operations, and safe usage patterns",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"5-Data Types/Integers.sol": "IntegerTypes"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"5-Data Types/Integers.sol": {
+			"keccak256": "0x13591241b3fb2e6a9b4769350ed34c6c0e931dbfdac666afdb1de4602293eddb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d69673e518cdd685ec558635a07212f096dcde93aca9cf159058cc28ce3c4cbf",
+				"dweb:/ipfs/QmXC2wKUSBu4mpPqTHYT2xiujBKwzSNZmkWpyjKxdKUnRq"
+			]
+		}
+	},
+	"version": 1
+}

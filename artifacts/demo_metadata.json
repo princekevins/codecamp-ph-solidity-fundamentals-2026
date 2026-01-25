@@ -7,58 +7,68 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "getMoreBlockInfo",
+				"name": "f1",
 				"outputs": [
 					{
-						"internalType": "bytes32",
-						"name": "blockHashValue",
-						"type": "bytes32"
-					},
-					{
-						"internalType": "address",
-						"name": "coinbase",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
-						"name": "prevRandao",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "f4",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
 		"devdoc": {
-			"details": "Shows how to access Ethereum blockchain global variables in Solidity",
+			"details": "Shows different function visibility modifiers in Solidity",
 			"kind": "dev",
 			"methods": {
-				"getMoreBlockInfo()": {
-					"details": "Returns additional block information (updated for PoS)",
+				"f1()": {
+					"details": "Public function visible both internally and externally",
 					"returns": {
-						"blockHashValue": "The hash of one of the 256 most recent blocks",
-						"coinbase": "The current block miner's address (now validator in PoS)",
-						"prevRandao": "The randomness value from the Beacon Chain"
+						"_0": "Always returns 1"
+					}
+				},
+				"f4()": {
+					"details": "External function visible only outside the contract",
+					"returns": {
+						"_0": "Always returns 4"
 					}
 				}
 			},
-			"title": "Global Variables Demonstration (Post-Paris Upgrade)",
+			"title": "Function Visibility Demonstration",
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
 			"methods": {
-				"getMoreBlockInfo()": {
-					"notice": "Shows updated global block variables after Paris upgrade"
+				"f1()": {
+					"notice": "Can be called: - From within this contract - From child contracts - From other contracts - From transactions"
+				},
+				"f4()": {
+					"notice": "Can be called: - From other contracts (via this.f4()) - From transactions - NOT from within this contract (without using this.f4()) - NOT from child contracts (without using this.f4())"
 				}
 			},
-			"notice": "Updated for Ethereum's transition to Proof-of-Stake (Paris Upgrade)",
+			"notice": "Demonstrates public, private, internal, and external visibility",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"12-Global Variables/vardemo.sol": "demo"
+			"14-Visibility/code.sol": "Demo"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -66,18 +76,18 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"12-Global Variables/vardemo.sol": {
-			"keccak256": "0x0940a21347f4211eb491421a797cec7257fad480f07b24bad17ad04d908a296c",
+		"14-Visibility/code.sol": {
+			"keccak256": "0x5a72c3116228de3358f3909500e99ab7a43a16c2aacca368e78a0f87e6ecaf55",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0bd60d2ec23e6494a166e42023283d7d3a653de4d0f604bc4d6f5bb6828327dd",
-				"dweb:/ipfs/QmPMpbxXLi1LZwy4cwmBzVbD7RsVpU8Ncfdo1Ndtsjgdq4"
+				"bzz-raw://62e302ac05c421893cb9447e35b69d7ee48aa82977e381b2c980bb1ba8aa625d",
+				"dweb:/ipfs/Qmat7q5NBCH9qu8YwVuXb6HbQbM2V3f1rPP5M3PuWh7zmU"
 			]
 		}
 	},

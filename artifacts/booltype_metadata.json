@@ -129,7 +129,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"6-Data Types/Bool.sol": "booltype"
+			"5-Data Types/Bool.sol": "booltype"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -137,13 +137,13 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"6-Data Types/Bool.sol": {
+		"5-Data Types/Bool.sol": {
 			"keccak256": "0x9230ab807b27c537cfedac85b448fca4bce7f0f02871e2a767f300f6d51d0aba",
 			"license": "MIT",
 			"urls": [

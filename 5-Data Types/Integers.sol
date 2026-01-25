@@ -1,135 +1,155 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.0 <0.9.0;
+pragma solidity ^0.8.0;
 
 /**
  * @title Integer Types Demo
- * @dev Demonstrates the use of integer types in Solidity
- * @notice Solidity provides both signed and unsigned integers in various sizes
- * @notice Integer types are value types that can hold integer values of different sizes
+ * @dev Demonstrates the use of integer types in Solidity with best practices
+ * @notice Shows different integer sizes, operations, and safe usage patterns
+ * @author Your Name
  */
-contract integertype {
+contract IntegerTypes {
+    // ========== STATE VARIABLES ========== //
+    // Using descriptive names to avoid shadowing and improve clarity
+
     /**
-     * @dev Unsigned integer (uint256)
-     * @notice Can hold values from 0 to 2^256-1
+     * @dev Default unsigned 256-bit integer (state variable)
+     * @notice Range: 0 to 2^256-1 (~1.15e77)
      * @notice uint256 is the default when using just 'uint'
-     * @notice Unsigned integers can only represent non-negative values
      */
-    uint256 a; // unsigned integer (uint8 to uint256 in steps of 8)
+    uint256 public stateValueA;  // Renamed from 'a' to avoid shadowing
 
     /**
-     * @dev Signed integer (int256)
-     * @notice Can hold values from -2^255 to 2^255-1
-     * @notice int256 is the default when using just 'int'
-     * @notice Signed integers can represent both positive and negative values
+     * @dev Default signed 256-bit integer (state variable)
+     * @notice Range: -2^255 to 2^255-1 (~±5.79e76)
      */
-    int256 b; // signed integer (int8 to int256 in steps of 8)
-
-    /*
-     * INTEGER TYPE RANGES:
-     *
-     * Unsigned Integers (uint):
-     * uint8:   0 to 255 (2^8 - 1)
-     * uint16:  0 to 65,535 (2^16 - 1)
-     * uint32:  0 to 4,294,967,295 (2^32 - 1)
-     * ...
-     * uint256: 0 to 2^256 - 1 (a very large number)
-     *
-     * Signed Integers (int):
-     * int8:   -128 to 127 (-2^7 to 2^7 - 1)
-     * int16:  -32,768 to 32,767 (-2^15 to 2^15 - 1)
-     * int32:  -2,147,483,648 to 2,147,483,647 (-2^31 to 2^31 - 1)
-     * ...
-     * int256: -2^255 to 2^255 - 1
-     *
-     * @dev Note: Since Solidity 0.8.0, arithmetic operations revert on underflow/overflow
-     * @dev In previous versions, these operations would wrap around
-     */
+    int256 public stateValueB;  // Renamed from 'b' for consistency
 
     /**
      * @dev Signed 256-bit integer initialized to 127
-     * @notice This value fits well within the range of int256
      */
-    int256 count = 127; // Defaults to int256, value well within range
+    int256 public count = 127;
 
     /**
      * @dev Signed 16-bit integer initialized to -1233
-     * @notice This demonstrates a smaller signed integer type
-     * @notice int16 range: -32,768 to 32,767
-     * @dev WARNING: -1233 is within int16 range, but values outside this range would cause compilation errors
+     * @notice Range: -32,768 to 32,767
      */
-    int16 count2 = -1233;
+    int16 public count2 = -1233;
 
     /**
      * @dev Signed 32-bit integer initialized to -123456
-     * @notice This demonstrates a medium-sized signed integer type
-     * @notice int32 range: -2,147,483,648 to 2,147,483,647
+     * @notice Range: -2,147,483,648 to 2,147,483,647
      */
-    int32 count3 = -123456;
+    int32 public count3 = -123456;
 
     /**
      * @dev Unsigned 256-bit integer initialized to 23
-     * @notice This is the default uint type when size isn't specified
-     * @notice uint256 range: 0 to 2^256-1
      */
-    uint256 num = 23; // Defaults to uint256
+    uint256 public num = 23;
 
     /**
-     * @dev Unsigned 8-bit integer initialized to 255
-     * @notice This is the maximum value for uint8 (2^8 - 1)
-     * @notice uint8 range: 0 to 255
+     * @dev Unsigned 8-bit integer initialized to maximum value (255)
+     * @notice Range: 0 to 255
      */
-    uint8 num2 = 255; // Maximum value for uint8
+    uint8 public num2 = 255;
 
     /**
      * @dev Unsigned 16-bit integer initialized to 26456
-     * @notice This demonstrates a medium-sized unsigned integer type
-     * @notice uint16 range: 0 to 65,535
-     * @dev WARNING: 26456 is within uint16 range, but values above 65,535 would cause compilation errors
+     * @notice Range: 0 to 65,535
      */
-    uint16 num3 = 26456;
+    uint16 public num3 = 26456;
+
+    // ========== INTEGER TYPE RANGES REFERENCE ========== //
+    /*
+     * Unsigned Integers (uint):
+     * uint8:    0 to 255 (2^8 - 1)
+     * uint16:   0 to 65,535 (2^16 - 1)
+     * uint32:   0 to 4,294,967,295 (2^32 - 1)
+     * ...
+     * uint256:  0 to 2^256 - 1 (~1.15e77)
+
+     * Signed Integers (int):
+     * int8:    -128 to 127 (-2^7 to 2^7 - 1)
+     * int16:   -32,768 to 32,767 (-2^15 to 2^15 - 1)
+     * int32:   -2,147,483,648 to 2,147,483,647 (-2^31 to 2^31 - 1)
+     * ...
+     * int256:  -2^255 to 2^255 - 1 (~±5.79e76)
+     */
+
+    // ========== FUNCTIONS ========== //
 
     /**
-     * @dev Function to demonstrate integer operations
-     * @param x First integer value
-     * @param y Second integer value
-     * @return The sum of x and y
-     * @notice Shows basic arithmetic with integers
-     * @notice In Solidity 0.8.0+, this will revert on overflow
+     * @dev Adds two unsigned integers
+     * @param firstValue First operand (renamed from 'x' for clarity)
+     * @param secondValue Second operand (renamed from 'y' for clarity)
+     * @return Sum of firstValue and secondValue
+     * @notice Uses Solidity 0.8.0+ built-in overflow protection
      */
-    function add(uint256 x, uint256 y) public pure returns (uint256) {
-        return x + y;
+    function add(uint256 firstValue, uint256 secondValue) public pure returns (uint256) {
+        return firstValue + secondValue;
     }
 
     /**
-     * @dev Function to demonstrate integer comparison
-     * @param a First value to compare
-     * @param b Second value to compare
-     * @return true if a is greater than b, false otherwise
+     * @dev Compares two unsigned integers
+     * @param firstValue First value to compare (renamed from 'a' to avoid shadowing)
+     * @param secondValue Second value to compare (renamed from 'b' for consistency)
+     * @return true if firstValue > secondValue, false otherwise
      */
-    function isGreater(uint256 a, uint256 b) public pure returns (bool) {
-        return a > b;
+    function isGreater(uint256 firstValue, uint256 secondValue) public pure returns (bool) {
+        return firstValue > secondValue;
     }
 
     /**
-     * @dev Function to show type conversion between integer sizes
-     * @param largeNumber A uint256 value
-     * @return The value converted to uint8 (will truncate if too large)
-     * @notice Demonstrates explicit type conversion
-     * @notice WARNING: Values larger than 255 will be truncated
+     * @dev Safely converts a uint256 to uint8 with overflow protection
+     * @param largeNumber Value to convert
+     * @return Converted value
+     * @notice Reverts if input exceeds uint8 range (255)
      */
-    function convertToUint8(uint256 largeNumber) public pure returns (uint8) {
+    function safeConvertToUint8(uint256 largeNumber) public pure returns (uint8) {
+        require(largeNumber <= 255, "IntegerTypes: value exceeds uint8 range");
         return uint8(largeNumber);
     }
 
     /**
-     * @dev Function to demonstrate safe math with require
-     * @param a First value
-     * @param b Second value
-     * @return The sum of a and b
-     * @notice Shows manual overflow check (though Solidity 0.8.0+ does this automatically)
+     * @dev Adds two numbers with explicit overflow check
+     * @param firstValue First value
+     * @param secondValue Second value
+     * @return Sum of firstValue and secondValue
+     * @notice Demonstrates manual overflow check (redundant in 0.8.0+ but educational)
      */
-    function safeAdd(uint256 a, uint256 b) public pure returns (uint256) {
-        require(a + b >= a, "Integer overflow detected");
-        return a + b;
+    function explicitSafeAdd(uint256 firstValue, uint256 secondValue) public pure returns (uint256) {
+        require(secondValue <= type(uint256).max - firstValue, "IntegerTypes: addition overflow");
+        return firstValue + secondValue;
+    }
+
+    /**
+     * @dev Demonstrates safe type conversions between different integer sizes
+     * @return Tuple of converted values (uint8, uint16, uint32)
+     * @notice Shows how to safely convert between integer types
+     */
+    function demonstrateTypeConversions() public pure returns (uint8, uint16, uint32) {
+        uint256 largeNumber = 250;  // Value that fits in all target types
+
+        uint8 small8 = uint8(largeNumber);
+        uint16 small16 = uint16(largeNumber);
+        uint32 small32 = uint32(largeNumber);
+
+        return (small8, small16, small32);
+    }
+
+    /**
+     * @dev Updates the stateValueA variable
+     * @param newValue New value to set
+     * @notice Demonstrates state variable modification
+     */
+    function updateStateValueA(uint256 newValue) public {
+        stateValueA = newValue;
+    }
+
+    /**
+     * @dev Updates the stateValueB variable
+     * @param newValue New value to set
+     */
+    function updateStateValueB(int256 newValue) public {
+        stateValueB = newValue;
     }
 }

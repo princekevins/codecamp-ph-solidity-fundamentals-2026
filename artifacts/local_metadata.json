@@ -20,7 +20,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "get",
+				"name": "marks",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -29,43 +29,30 @@
 					}
 				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getter",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "newGetter",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_newAge",
+						"name": "newMarks",
 						"type": "uint256"
 					}
 				],
-				"name": "setAge",
+				"name": "setMarks",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newage",
+						"type": "uint256"
+					}
+				],
+				"name": "setter",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -73,18 +60,35 @@
 		],
 		"devdoc": {
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"setMarks(uint256)": {
+					"details": "Updates the 'marks' state variable",
+					"params": {
+						"newMarks": "The new value to set for 'marks'"
+					}
+				},
+				"setter(uint256)": {
+					"details": "Updates the 'age' state variable",
+					"params": {
+						"newage": "The new value to set for 'age'"
+					}
+				}
+			},
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"setter(uint256)": {
+					"notice": "Requires gas (modifies contract storage)"
+				}
+			},
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"4-Function/pure&view.sol": "Local"
+			"4-Function/state.sol": "Local"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -92,18 +96,18 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"4-Function/pure&view.sol": {
-			"keccak256": "0x370e5f6599f4a3bbe57bdbb5900ce2eb836118811776c8350c52181b4869f4d6",
+		"4-Function/state.sol": {
+			"keccak256": "0xcac4733c0f63737e0b7766e74e9eb9ab7217545e134c2b27222cb7defa450349",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ea63229aa5d1378e013da4eb4bc1d2dffccf1d665a4bc63a81c9616c9de40327",
-				"dweb:/ipfs/QmSDevRDXczC7J9rjJGZkZ6cNXAEyJSxkcfxEujB7cEtSs"
+				"bzz-raw://a035d2c38ec4fb709ce1378bb14d37c9cffc689d2ed064ed7ba5204e08ab471d",
+				"dweb:/ipfs/QmcMqT8n1zPco1kg1BNMmo8kZnYwNTv6t4ESdmKwDW1XLX"
 			]
 		}
 	},

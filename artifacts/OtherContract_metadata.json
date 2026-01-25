@@ -1,0 +1,130 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "callExternalFunction",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "cx",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "cy",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "obj",
+				"outputs": [
+					{
+						"internalType": "contract Demo",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Shows how to call functions from a separate contract",
+			"kind": "dev",
+			"methods": {
+				"callExternalFunction()": {
+					"details": "Demonstrates calling external function via instance",
+					"returns": {
+						"_0": "Value returned from f4()"
+					}
+				},
+				"constructor": {
+					"details": "Constructor creates instance of Demo contract"
+				}
+			},
+			"stateVariables": {
+				"cx": {
+					"details": "Calls public function from Demo contract"
+				},
+				"cy": {
+					"details": "Calls external function from Demo contract"
+				}
+			},
+			"title": "Other Contract Demonstrating External Access",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"cx()": {
+					"notice": "Works because public functions are externally accessible"
+				},
+				"cy()": {
+					"notice": "Works because external functions are designed for external access"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"14-Visibility/code.sol": "OtherContract"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"14-Visibility/code.sol": {
+			"keccak256": "0x5a72c3116228de3358f3909500e99ab7a43a16c2aacca368e78a0f87e6ecaf55",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://62e302ac05c421893cb9447e35b69d7ee48aa82977e381b2c980bb1ba8aa625d",
+				"dweb:/ipfs/Qmat7q5NBCH9qu8YwVuXb6HbQbM2V3f1rPP5M3PuWh7zmU"
+			]
+		}
+	},
+	"version": 1
+}

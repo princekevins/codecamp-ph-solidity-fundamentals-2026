@@ -182,7 +182,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"6-Data Types/Enum.sol": "enumDemo"
+			"5-Data Types/Enum.sol": "enumDemo"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -190,13 +190,13 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
+			"enabled": false,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"6-Data Types/Enum.sol": {
+		"5-Data Types/Enum.sol": {
 			"keccak256": "0x6db96edcda0fa1ffbdb961892aa08a9893a7059699fb573a7847476cb05c0912",
 			"license": "MIT",
 			"urls": [
